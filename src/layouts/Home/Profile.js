@@ -19,7 +19,7 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Hello, Im Nika Germanishvili Front-End Developer with 3+ yrs exp  React, Next.js, Typescript, React Native, Node.js, Express, MongoDB, ArangoDB, AWS.  Team player, Quick learner.  Contact me for your next project.
+      We at Pavona Studio are focused on the marriage between AI and AR to provide you with cutting edge Solutions to grow your business and stand out. Interested? Contact us using the button below.
     </Text>
   </Fragment>
 );
@@ -42,18 +42,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
       <Transition in={visible || focused} timeout={0}>
         {visible => (
           <div className={styles.content}>
-            <div className={styles.column}>
-              <ProfileText visible={visible} titleId={titleId} />
-              <Button
-                secondary
-                className={styles.button}
-                data-visible={visible}
-                href="/contact"
-                icon="send"
-              >
-                Send me a message
-              </Button>
-            </div>
+
             <div className={styles.column}>
               <div className={styles.tag} aria-hidden>
                 <Divider
@@ -63,28 +52,23 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  About Me
+                  About Us
                 </div>
               </div>
               <div className={styles.image}>
-                <Image
-                  reveal
-                  delay={100}
-                  placeholder={profileImg1}
-                  srcSet={[profileImg1, profileImg1]}
-                  sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me standing in front of the Torii on Miyajima, an island off the coast of Hiroshima in Japan"
-                />
-                <svg
-                  aria-hidden="true"
-                  width="135"
-                  height="765"
-                  viewBox="0 0 135 765"
-                  className={styles.svg}
-                  data-visible={visible}
-                >
-                  <use href={`${profileKatakana}#katakana-profile`} />
-                </svg>
+              <div className={styles.column}>
+              <ProfileText visible={visible} titleId={titleId} />
+              <Button
+                secondary
+                className={styles.button}
+                data-visible={visible}
+                href="/contact"
+                icon="send"
+              >
+                Reach out
+              </Button>
+            </div>
+
               </div>
             </div>
           </div>

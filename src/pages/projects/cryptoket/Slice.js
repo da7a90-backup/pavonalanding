@@ -125,7 +125,7 @@ export const Slice = () => {
           <ProjectSectionContent>
             <ProjectTextRow>
 
-              Cryptoket Blochain BETA (NIKA GERMANISHVILI)
+              Cryptoket Blochain BETA 
             </ProjectTextRow>
 
           </ProjectSectionContent>

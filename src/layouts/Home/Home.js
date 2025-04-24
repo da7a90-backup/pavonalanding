@@ -24,7 +24,7 @@ import Zuri from 'assets/portfo-n1.png'
 import MusicRoom from 'assets/portf-n2.png'
 import Korea from 'assets/korea.png'
 
-const disciplines = ['REACT.JS', 'NEXT.JS', 'JAVASCRIPT', 'NODE.JS', 'TAILWINDCSS', 'SASS', 'BOOTSTRAP', 'MATERIALUI', 'CHAKRAUI', 'MONGODB', 'FIREBASE'];
+const disciplines = ['Custom AI Solutions ', 'AR Experiences', 'Tailored to your needs'];
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -90,9 +90,8 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Meta
-        title="Front-End + Developer"
-        description="Design portfolio of Nika Germanishvili — working on web & mobile
-          apps with a focus on motion, experience design, and accessibility."
+        title="Creative AI & AR studio"
+        description="Landing page for Pavona AI & AR creative studio."
       />
       <Intro
         id="intro"

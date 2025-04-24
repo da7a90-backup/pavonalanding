@@ -149,10 +149,9 @@ export const SmartSparrow = () => {
             <ProjectSectionColumns width="full">
               <ProjectSectionContent width="full">
                 <ProjectTextRow width="s">
-                  <ProjectSectionHeading>Nika Germanishvili</ProjectSectionHeading>
+                  <ProjectSectionHeading>Pavona Studio</ProjectSectionHeading>
                   <ProjectSectionText>
-                    This cutting-edge project is built using JavaScript, a versatile and powerful programming language that enables dynamic and interactive features. Nika&apos;s expertise in JavaScript shines through in the seamless functionality and responsiveness of the platform, ensuring a user-friendly experience for members of Onyx Fitness.
-                    Adding an extra layer of visual appeal, Nika has skillfully incorporated GSAP animations into the project. GSAP (GreenSock Animation Platform) is renowned for its flexibility and smooth animation capabilities. By leveraging GSAP, Nika has brought the Onyx Fitness platform to life with captivating and eye-catching animations that enhance the overall user experience.
+                    The world is yours.
                   </ProjectSectionText>
                 </ProjectTextRow>
               </ProjectSectionContent>
@@ -252,7 +251,7 @@ export const SmartSparrow = () => {
                 <ProjectSectionContent>
                   <ProjectTextRow center>
                     <ProjectSectionHeading>
-                      Nika Germanishvili
+                      Pavona Studio
                     </ProjectSectionHeading>
                     <ProjectSectionText>
                       The flexibility of the product allowed for developers to create

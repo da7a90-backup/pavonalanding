@@ -42,9 +42,9 @@ export const Contact = () => {
         'template_8cu4egw',
         {
           from_name: name.value,
-          to_name: 'Nika',
+          to_name: 'Sid',
           from_email: email.value,
-          to_email: 'nikagermanishvili8@gmail.com',
+          to_email: 'sid@pavona.studio',
           message: message.value,
         },
         'v1wxDaDB9vjV9JpUf',

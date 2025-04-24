@@ -1,10 +1,10 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "homepage": "https://hamishw.com",
-  "description": "Portfolio site for Nika Germanishvili",
-  "repository": "https://github.com/HamishMW/portfolio.git",
-  "author": "Nika Germanishvili <hello@hamishw.com>",
+  "homepage": "https://pavona.studio",
+  "description": "Portfolio site for Pavona Studio",
+  "repository": "https://github.com/da7a90-backup/pavonalanding.git",
+  "author": "Pavona Studio <sid@pavona.studio>",
   "devDependencies": {
     "@mapbox/rehype-prism": "^0.7.0",
     "@storybook/addon-a11y": "^6.5.10",

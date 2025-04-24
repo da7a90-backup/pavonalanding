@@ -23,7 +23,7 @@ export const Monogram = () => {
 
   return (
     <div aria-hidden width="46" height="29" className={styles.monogram} ref={monogramRef}>
-      <h2 className={styles.monoh1}>Nika Germanishvili</h2>
+      <h2 className={styles.monoh1}>Pavona Studio</h2>
     </div>
   );
 };
