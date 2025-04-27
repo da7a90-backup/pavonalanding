@@ -24,7 +24,7 @@ import Zuri from 'assets/portfo-n1.png'
 import MusicRoom from 'assets/portf-n2.png'
 import Korea from 'assets/korea.png'
 
-const disciplines = ['Custom AI Solutions ', 'AR Experiences', 'Tailored to your needs'];
+const disciplines = ['AI Services ', 'AR Experiences', 'Blockchain Solutions', 'Tailored to your needs'];
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);

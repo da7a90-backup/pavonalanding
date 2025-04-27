@@ -15,14 +15,8 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'linkedin',
-    url: 'https://www.linkedin.com/in/sid-barrack',
+    label: 'LinkedIn',
+    url: '#',
     icon: 'linkedin',
-  },
-
-  {
-    label: 'Github',
-    url: 'https://github.com/da7a90-backup',
-    icon: 'github',
-  },
+  }
 ];
