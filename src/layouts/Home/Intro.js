@@ -67,11 +67,11 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
             <DisplacementSphere />
             <header className={styles.text}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
-                <DecoderText text="Pavona" delay={300} />
+                <DecoderText text="Digital Studio" delay={300} />
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
                 <VisuallyHidden className={styles.label}>
-                  {`Creative Studio + ${introLabel}`}
+                  {`Creative ${introLabel}`}
                 </VisuallyHidden>
                 <span aria-hidden className={styles.row}>
                   <span
@@ -79,20 +79,31 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                     data-status={status}
                     style={cssProps({ delay: tokens.base.durationXS })}
                   >
-                    Creative Studio
+                    Creative Solutions
                   </span>
                   <span className={styles.line} data-status={status} />
                 </span>
                 <div className={styles.row} component="span">
                   <AnimatePresence>
-                    {disciplines.map(item => (
+                    {disciplines.map((item,index) => (
                       <Transition
                         unmount
                         in={item === currentDiscipline}
                         timeout={{ enter: 3000, exit: 2000 }}
                         key={item}
                       >
-                        {(visible, status) => (
+                        {(visible, status) => index == 3 ?
+                        (
+                          <span
+                            aria-hidden
+                            className={styles.word}
+                            data-plus={false}
+                            data-status={status}
+                            style={cssProps({ delay: tokens.base.durationL })}
+                          >
+                            {item}
+                          </span>
+                        ) :(
                           <span
                             aria-hidden
                             className={styles.word}

@@ -1,8 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './Monogram.module.css';
+import Image from 'next/image';
+import { useTheme } from 'components/ThemeProvider';
 
 export const Monogram = () => {
   const monogramRef = useRef(null);
+  const { themeId } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +25,8 @@ export const Monogram = () => {
   }, []);
 
   return (
-    <div aria-hidden width="46" height="29" className={styles.monogram} ref={monogramRef}>
-      <h2 className={styles.monoh1}>Pavona Studio</h2>
+    <div ref={monogramRef}>
+      {themeId == "light" ? <Image width={160} height={120} src='/logo.png'/> : <Image width={160} height={120} src='/logodark.png'/>}
     </div>
   );
 };

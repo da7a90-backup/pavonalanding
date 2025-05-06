@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0;
-  width: var(--space2XL);
   position: fixed;
   top: var(--spaceOuter);
   left: var(--spaceOuter);

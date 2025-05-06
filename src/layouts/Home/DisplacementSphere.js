@@ -26,7 +26,7 @@ import vertShader from './displacementSphereVertex.glsl';
 const springConfig = {
   stiffness: 30,
   damping: 20,
-  mass: 2,
+  mass: 1,
 };
 
 export const DisplacementSphere = props => {
@@ -64,24 +64,38 @@ export const DisplacementSphere = props => {
     renderer.current.outputEncoding = sRGBEncoding;
 
     camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
-    camera.current.position.z = 52;
+    camera.current.position.z = 98;
 
     scene.current = new Scene();
 
-    material.current = new MeshPhongMaterial();
+    material.current = new MeshPhongMaterial({
+      emissive: new Color(1, 0, 0),        // pure red emissive
+      emissiveIntensity: 0.5,             // dial up from 0–1 as needed
+      shininess: 30
+    });
     material.current.onBeforeCompile = shader => {
       uniforms.current = UniformsUtils.merge([
         shader.uniforms,
         { time: { type: 'f', value: 0 } },
       ]);
+      shader.uniforms.uColor = {
+        value: new Color().setHSL(0,1,0.5)
+      };
+      uniforms.current = UniformsUtils.merge([
+              shader.uniforms,
+              { time: { type: 'f', value: 0 } },
+            ]);
 
       shader.uniforms = uniforms.current;
       shader.vertexShader = vertShader;
       shader.fragmentShader = fragShader;
+      shader.fragmentShader = `
+      uniform vec3 uColor;
+    ` + fragShader;
     };
 
     startTransition(() => {
-      geometry.current = new SphereBufferGeometry(32, 128, 128);
+      geometry.current = new SphereBufferGeometry(32, 64, 64);
       sphere.current = new Mesh(geometry.current, material.current);
       sphere.current.position.z = 0;
       sphere.current.modifier = Math.random();
@@ -96,11 +110,11 @@ export const DisplacementSphere = props => {
 
   useEffect(() => {
     const dirLight = new DirectionalLight(colorWhite, 0.6);
-    const ambientLight = new AmbientLight(colorWhite, themeId === 'light' ? 0.8 : 0.1);
+    const ambientLight = new AmbientLight(colorWhite, themeId === 'light' ? 0.2 : 0.1);
 
-    dirLight.position.z = 200;
-    dirLight.position.x = 100;
-    dirLight.position.y = 100;
+    dirLight.position.z = 350;
+    dirLight.position.x = 200;
+    dirLight.position.y = 200;
 
     lights.current = [dirLight, ambientLight];
     scene.current.background = new Color(...rgbToThreeColor(rgbBackground));
@@ -163,10 +177,10 @@ export const DisplacementSphere = props => {
       animation = requestAnimationFrame(animate);
 
       if (uniforms.current !== undefined) {
-        uniforms.current.time.value = 0.00005 * (Date.now() - start.current);
+        uniforms.current.time.value = 0.00007 * (Date.now() - start.current);
       }
 
-      sphere.current.rotation.z += 0.001;
+      sphere.current.rotation.z += 0.005;
       sphere.current.rotation.x = rotationX.get();
       sphere.current.rotation.y = rotationY.get();
 
@@ -185,7 +199,7 @@ export const DisplacementSphere = props => {
   }, [isInViewport, reduceMotion, rotationX, rotationY]);
 
   return (
-    <Transition in timeout={3000}>
+    <Transition in timeout={2000}>
       {visible => (
         <canvas
           aria-hidden

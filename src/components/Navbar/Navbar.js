@@ -144,7 +144,6 @@ export const Navbar = () => {
       <RouterLink href={route === '/' ? '/#intro' : '/'} scroll={false}>
         <a
           data-navbar-item
-          className={styles.logo}
           aria-label="Pavona Studio"
           onClick={handleMobileNavClick}
         >

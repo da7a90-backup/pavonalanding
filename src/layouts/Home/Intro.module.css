@@ -74,7 +74,7 @@
 .title {
   display: flex;
   flex-direction: column;
-  font-size: calc((140 / 16) * 1rem);
+  font-size: calc((120 / 16) * 1rem);
   letter-spacing: -0.005em;
 
   @media (--mediaDesktop) {
@@ -156,7 +156,7 @@
   }
 
   &[data-plus='true']::before {
-    content: '+';
+    content: 'for';
     margin-right: 10px;
     opacity: 0.4;
   }
