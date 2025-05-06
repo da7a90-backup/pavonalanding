@@ -236,8 +236,9 @@ void main() {
 	#include <fog_vertex>
 
   vUv = uv;
-
-  noise = turbulence(0.01 * position + normal + time * 0.8);
-  vec3 displacement = vec3((position.x) * noise, position.y * noise, position.z * noise);
+  float beat = 0.8 + 0.3 * sin(time * 6.9);
+  noise = turbulence(0.03 * beat * position + normal + time * 0.4);
+  
+  vec3 displacement = vec3((position.x) * noise * beat, position.y * noise, position.z * noise * beat);
   gl_Position = projectionMatrix * modelViewMatrix * vec4((position + normal) + displacement, 1.0);
 }

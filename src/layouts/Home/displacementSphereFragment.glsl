@@ -40,9 +40,9 @@ varying float noise;
 
 void main() {
 	#include <clipping_planes_fragment>
-
+  float beat = 0.8 + 0.2 * sin(time * 44.88);
   float glow = 1.0 + 1.0 * noise;   // tweak these weights as you like
-  vec3 color = uColor * glow;
+  vec3 color = uColor * glow * beat;
   vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
   vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));

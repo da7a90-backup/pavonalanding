@@ -64,7 +64,7 @@ export const DisplacementSphere = props => {
     renderer.current.outputEncoding = sRGBEncoding;
 
     camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
-    camera.current.position.z = 98;
+    camera.current.position.z = 100;
 
     scene.current = new Scene();
 
@@ -95,7 +95,7 @@ export const DisplacementSphere = props => {
     };
 
     startTransition(() => {
-      geometry.current = new SphereBufferGeometry(32, 64, 64);
+      geometry.current = new SphereBufferGeometry(22, 64, 64);
       sphere.current = new Mesh(geometry.current, material.current);
       sphere.current.position.z = 0;
       sphere.current.modifier = Math.random();
@@ -157,8 +157,8 @@ export const DisplacementSphere = props => {
         y: event.clientY / window.innerHeight,
       };
 
-      rotationX.set(position.y / 2);
-      rotationY.set(position.x / 2);
+      rotationX.set(position.y / 1);
+      rotationY.set(position.x / 1);
     };
 
     if (!reduceMotion && isInViewport) {
@@ -180,7 +180,7 @@ export const DisplacementSphere = props => {
         uniforms.current.time.value = 0.00007 * (Date.now() - start.current);
       }
 
-      sphere.current.rotation.z += 0.005;
+      sphere.current.rotation.z += 0.002;
       sphere.current.rotation.x = rotationX.get();
       sphere.current.rotation.y = rotationY.get();
 
